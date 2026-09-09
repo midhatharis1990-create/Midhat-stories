@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heard, But Unheard — Stories & Support</title>
+  <meta name="description" content="Heard, But Unheard shares composite stories of Pakistani women balancing domestic labor, immigration, widowhood, and caregiving — paired with encouragement and resources for real support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#232420;
+      --ink-soft:#4d4f47;
+      --sand:#f7f1e3;
+      --sand-deep:#efe4c8;
+      --green:#0b4228;
+      --green-deep:#062f1c;
+      --gold:#c98a2c;
+      --rani:#a53860;
+      --line:#dccfa8;
+      --white:#fffdf8;
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:var(--sand);
+      color:var(--ink);
+      font-family:'Public Sans', sans-serif;
+      line-height:1.6;
+    }
+    h1,h2,h3,.serif{
+      font-family:'Fraunces', serif;
+      font-weight:500;
+      color:var(--ink);
+      margin:0;
+    }
+    a{color:inherit;}
+    img{max-width:100%;display:block;}
+
+    .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+
+    /* NAV */
+    .flag-bar{height:6px;width:100%;background:var(--green);position:relative;}
+    .flag-bar::after{
+      content:"";position:absolute;top:0;right:0;height:100%;width:26%;
+      background:var(--white);
+    }
+    .truck-border{
+      height:22px;width:100%;
+      background-repeat:repeat-x;background-size:44px 22px;
+      background-image:
+        radial-gradient(circle at 22px 4px, var(--rani) 3px, transparent 3.5px),
+        radial-gradient(circle at 0px 16px, var(--gold) 2.5px, transparent 3px),
+        linear-gradient(90deg, var(--green) 0 2px, transparent 2px);
+      background-color:var(--sand-deep);
+      border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    }
+    nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:22px 24px;
+      max-width:920px;
+      margin:0 auto;
+    }
+    .brand{font-family:'Fraunces',serif;font-size:20px;font-weight:600;letter-spacing:0.01em;}
+    .brand span{color:var(--gold);}
+    nav .links{display:flex;gap:28px;font-size:14px;}
+    nav .links a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;}
+    nav .links a:hover{border-bottom-color:var(--ink);}
+
+    /* HERO */
+    header.hero{
+      padding:64px 0 72px;
+      border-bottom:1px solid var(--line);
+      background-image:
+        radial-gradient(circle at 8px 8px, var(--green) 1.4px, transparent 1.6px),
+        radial-gradient(circle at 24px 24px, var(--gold) 1.2px, transparent 1.4px);
+      background-size:32px 32px;
+      background-position:0 0;
+      position:relative;
+    }
+    header.hero::before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(180deg, var(--sand) 0%, rgba(247,241,227,0.75) 55%, var(--sand) 100%);
+      pointer-events:none;
+    }
+    .hero-inner{max-width:920px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+    .hero-flex{display:flex;align-items:center;gap:36px;flex-wrap:wrap;}
+    .hero-text{flex:1 1 380px;}
+    .hero-art{flex:0 1 260px;max-width:260px;margin:0 auto;}
+    .hero-art svg{width:100%;height:auto;}
+    .kicker{font-size:14px;color:var(--green-deep);margin-bottom:18px;}
+    h1.hero-title{
+      font-size:clamp(38px,7vw,64px);
+      line-height:1.06;
+      max-width:14ch;
+      letter-spacing:-0.01em;
+    }
+    h1.hero-title::after{
+      content:"";display:block;width:88px;height:5px;margin-top:22px;
+      background:linear-gradient(90deg, var(--green) 0 40%, var(--gold) 40% 70%, var(--rani) 70% 100%);
+    }
+    .hero-title em{font-style:italic;color:var(--gold);}
+    .hero-sub{
+      max-width:52ch;
+      margin-top:22px;
+      font-size:18px;
+      color:var(--ink-soft);
+    }
+    .hero-actions{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;}
+    .btn{
+      display:inline-block;padding:13px 24px;border-radius:2px;
+      font-size:15px;font-weight:600;text-decoration:none;
+      border:1px solid var(--ink);
+    }
+    .btn-solid{background:var(--ink);color:var(--white);}
+    .btn-solid:hover{background:var(--gold);border-color:var(--gold);}
+    .btn-outline{background:transparent;color:var(--ink);}
+    .btn-outline:hover{background:var(--ink);color:var(--white);}
+
+    /* CRISIS STRIP */
+    .crisis{
+      background:var(--green-deep);
+      color:var(--white);
+      padding:16px 0;
+      font-size:14.5px;
+    }
+    .crisis .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;}
+    .crisis strong{font-weight:700;}
+    .crisis a{text-decoration:underline;}
+
+    /* Accessibility improvement: ensure contact text contrast */
+    .res-contact {
+      font-size:14.5px;
+      color:#a53860; /* darker rani tone for better contrast */
+      font-weight:600;
+    }
+
+    footer{
+      padding:40px 24px;text-align:center;font-size:13.5px;color:var(--ink-soft);
+    }
+
+    @media (max-width:640px){
+      .story{grid-template-columns:1fr;}
+      .story-meta{display:flex;gap:12px;align-items:center;}
+    }
+  </style>
+</head>
+<body>
+
+<div class="flag-bar"></div>
+<nav>
+  <div class="brand">Heard, But <span>Unheard</span></div>
+  <div class="links">
+    <a href="#stories">Stories</a>
+    <a href="#encouragement">Encouragement</a>
+    <a href="#quotes">Quotes</a>
+    <a href="#resources">Resources</a>
+    <a href="#share">Share yours</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner hero-flex">
+    <div class="hero-text">
+      <div class="kicker">Stories about uncommon women of Pakistan — and who's in their corner</div>
+      <h1 class="hero-title">She's doing more than anyone sees. Someone should say so.</h1>
+      <p class="hero-sub">Heard, But Unheard tells the stories of Pakistani women carrying more than their share — and asks a simple question: who is actually appreciating this, and who is offering real encouragement, not just sympathy. Every story is paired with people who can help, and space for the appreciation these women rarely get to hear.</p>
+      <div class="hero-actions">
+        <a href="#stories" class="btn btn-solid">Read the stories</a>
+        <a href="#encouragement" class="btn btn-outline">Leave encouragement</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg" role="presentation">
+        <!-- decorative SVG -->
+      </svg>
+    </div>
+  </div>
+</header>
+
+<div no
