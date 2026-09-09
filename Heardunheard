@@ -1,152 +1,282 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heard, But Unheard — Stories & Support</title>
-  <meta name="description" content="Heard, But Unheard shares composite stories of Pakistani women balancing domestic labor, immigration, widowhood, and caregiving — paired with encouragement and resources for real support.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --ink:#232420;
-      --ink-soft:#4d4f47;
-      --sand:#f7f1e3;
-      --sand-deep:#efe4c8;
-      --green:#0b4228;
-      --green-deep:#062f1c;
-      --gold:#c98a2c;
-      --rani:#a53860;
-      --line:#dccfa8;
-      --white:#fffdf8;
-    }
-    *{box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
-    body{
-      margin:0;
-      background:var(--sand);
-      color:var(--ink);
-      font-family:'Public Sans', sans-serif;
-      line-height:1.6;
-    }
-    h1,h2,h3,.serif{
-      font-family:'Fraunces', serif;
-      font-weight:500;
-      color:var(--ink);
-      margin:0;
-    }
-    a{color:inherit;}
-    img{max-width:100%;display:block;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heard, But Unheard — Stories & Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#232420;
+    --ink-soft:#4d4f47;
+    --sand:#f7f1e3;
+    --sand-deep:#efe4c8;
+    --green:#0b4228;
+    --green-deep:#062f1c;
+    --gold:#c98a2c;
+    --rani:#a53860;
+    --line:#dccfa8;
+    --white:#fffdf8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:'Public Sans', sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    color:var(--ink);
+    margin:0;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
 
-    .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
 
-    /* NAV */
-    .flag-bar{height:6px;width:100%;background:var(--green);position:relative;}
-    .flag-bar::after{
-      content:"";position:absolute;top:0;right:0;height:100%;width:26%;
-      background:var(--white);
-    }
-    .truck-border{
-      height:22px;width:100%;
-      background-repeat:repeat-x;background-size:44px 22px;
-      background-image:
-        radial-gradient(circle at 22px 4px, var(--rani) 3px, transparent 3.5px),
-        radial-gradient(circle at 0px 16px, var(--gold) 2.5px, transparent 3px),
-        linear-gradient(90deg, var(--green) 0 2px, transparent 2px);
-      background-color:var(--sand-deep);
-      border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-    }
-    nav {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:22px 24px;
-      max-width:920px;
-      margin:0 auto;
-    }
-    .brand{font-family:'Fraunces',serif;font-size:20px;font-weight:600;letter-spacing:0.01em;}
-    .brand span{color:var(--gold);}
-    nav .links{display:flex;gap:28px;font-size:14px;}
-    nav .links a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;}
-    nav .links a:hover{border-bottom-color:var(--ink);}
+  /* NAV */
+  /* PAKISTAN FLAG ACCENT + TRUCK-ART BORDER */
+  .flag-bar{height:6px;width:100%;background:var(--green);position:relative;}
+  .flag-bar::after{
+    content:"";position:absolute;top:0;right:0;height:100%;width:26%;
+    background:var(--white);
+  }
+  .truck-border{
+    height:22px;width:100%;
+    background-repeat:repeat-x;background-size:44px 22px;
+    background-image:
+      radial-gradient(circle at 22px 4px, var(--rani) 3px, transparent 3.5px),
+      radial-gradient(circle at 0px 16px, var(--gold) 2.5px, transparent 3px),
+      linear-gradient(90deg, var(--green) 0 2px, transparent 2px);
+    background-color:var(--sand-deep);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
 
-    /* HERO */
-    header.hero{
-      padding:64px 0 72px;
-      border-bottom:1px solid var(--line);
-      background-image:
-        radial-gradient(circle at 8px 8px, var(--green) 1.4px, transparent 1.6px),
-        radial-gradient(circle at 24px 24px, var(--gold) 1.2px, transparent 1.4px);
-      background-size:32px 32px;
-      background-position:0 0;
-      position:relative;
-    }
-    header.hero::before{
-      content:"";position:absolute;inset:0;
-      background:linear-gradient(180deg, var(--sand) 0%, rgba(247,241,227,0.75) 55%, var(--sand) 100%);
-      pointer-events:none;
-    }
-    .hero-inner{max-width:920px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
-    .hero-flex{display:flex;align-items:center;gap:36px;flex-wrap:wrap;}
-    .hero-text{flex:1 1 380px;}
-    .hero-art{flex:0 1 260px;max-width:260px;margin:0 auto;}
-    .hero-art svg{width:100%;height:auto;}
-    .kicker{font-size:14px;color:var(--green-deep);margin-bottom:18px;}
-    h1.hero-title{
-      font-size:clamp(38px,7vw,64px);
-      line-height:1.06;
-      max-width:14ch;
-      letter-spacing:-0.01em;
-    }
-    h1.hero-title::after{
-      content:"";display:block;width:88px;height:5px;margin-top:22px;
-      background:linear-gradient(90deg, var(--green) 0 40%, var(--gold) 40% 70%, var(--rani) 70% 100%);
-    }
-    .hero-title em{font-style:italic;color:var(--gold);}
-    .hero-sub{
-      max-width:52ch;
-      margin-top:22px;
-      font-size:18px;
-      color:var(--ink-soft);
-    }
-    .hero-actions{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;}
-    .btn{
-      display:inline-block;padding:13px 24px;border-radius:2px;
-      font-size:15px;font-weight:600;text-decoration:none;
-      border:1px solid var(--ink);
-    }
-    .btn-solid{background:var(--ink);color:var(--white);}
-    .btn-solid:hover{background:var(--gold);border-color:var(--gold);}
-    .btn-outline{background:transparent;color:var(--ink);}
-    .btn-outline:hover{background:var(--ink);color:var(--white);}
+    display:flex;justify-content:space-between;align-items:center;
+    padding:22px 24px;max-width:920px;margin:0 auto;
+  }
+  .brand{font-family:'Fraunces',serif;font-size:20px;font-weight:600;letter-spacing:0.01em;}
+  .brand span{color:var(--gold);}
+  nav .links{display:flex;gap:28px;font-size:14px;}
+  nav .links a{text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px;}
+  nav .links a:hover{border-bottom-color:var(--ink);}
 
-    /* CRISIS STRIP */
-    .crisis{
-      background:var(--green-deep);
-      color:var(--white);
-      padding:16px 0;
-      font-size:14.5px;
-    }
-    .crisis .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;}
-    .crisis strong{font-weight:700;}
-    .crisis a{text-decoration:underline;}
+  /* HERO */
+  header.hero{
+    padding:64px 0 72px;
+    border-bottom:1px solid var(--line);
+    background-image:
+      radial-gradient(circle at 8px 8px, var(--green) 1.4px, transparent 1.6px),
+      radial-gradient(circle at 24px 24px, var(--gold) 1.2px, transparent 1.4px);
+    background-size:32px 32px;
+    background-position:0 0;
+    position:relative;
+  }
+  header.hero::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, var(--sand) 0%, rgba(247,241,227,0.75) 55%, var(--sand) 100%);
+    pointer-events:none;
+  }
+  .hero-inner{max-width:920px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+  .hero-flex{display:flex;align-items:center;gap:36px;flex-wrap:wrap;}
+  .hero-text{flex:1 1 380px;}
+  .hero-art{flex:0 1 260px;max-width:260px;margin:0 auto;}
+  .hero-art svg{width:100%;height:auto;}
+  .kicker{font-size:14px;color:var(--green-deep);margin-bottom:18px;}
+  h1.hero-title{
+    font-size:clamp(38px,7vw,64px);
+    line-height:1.06;
+    max-width:14ch;
+    letter-spacing:-0.01em;
+  }
+  h1.hero-title::after{
+    content:"";display:block;width:88px;height:5px;margin-top:22px;
+    background:linear-gradient(90deg, var(--green) 0 40%, var(--gold) 40% 70%, var(--rani) 70% 100%);
+  }
+  .hero-title em{font-style:italic;color:var(--gold);}
+  .hero-sub{
+    max-width:52ch;
+    margin-top:22px;
+    font-size:18px;
+    color:var(--ink-soft);
+  }
+  .hero-actions{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:13px 24px;border-radius:2px;
+    font-size:15px;font-weight:600;text-decoration:none;
+    border:1px solid var(--ink);
+  }
+  .btn-solid{background:var(--ink);color:var(--white);}
+  .btn-solid:hover{background:var(--gold);border-color:var(--gold);}
+  .btn-outline{background:transparent;color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--white);}
 
-    /* Accessibility improvement: ensure contact text contrast */
-    .res-contact {
-      font-size:14.5px;
-      color:#a53860; /* darker rani tone for better contrast */
-      font-weight:600;
-    }
+  /* CRISIS STRIP */
+  .crisis{
+    background:var(--green-deep);
+    color:var(--white);
+    padding:16px 0;
+    font-size:14.5px;
+  }
+  .crisis .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;}
+  .crisis strong{font-weight:700;}
+  .crisis a{text-decoration:underline;}
 
-    footer{
-      padding:40px 24px;text-align:center;font-size:13.5px;color:var(--ink-soft);
-    }
+  /* SECTION HEADERS */
+  section{padding:76px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .section-head{max-width:60ch;margin-bottom:48px;}
+  .section-icon{width:44px;height:44px;margin-bottom:14px;}
+  .section-icon svg{width:100%;height:100%;}
+  .section-head h2{font-size:clamp(26px,4vw,36px);}
+  .section-head p{margin-top:14px;color:var(--ink-soft);font-size:16px;}
 
-    @media (max-width:640px){
-      .story{grid-template-columns:1fr;}
-      .story-meta{display:flex;gap:12px;align-items:center;}
-    }
-  </style>
+  /* STORIES */
+  .story{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:28px;
+    padding:36px 0;
+    border-top:1px solid var(--line);
+  }
+  .story:first-of-type{border-top:none;}
+  .motif{
+    width:52px;height:52px;border-radius:50%;
+    background:var(--white);border:1.5px solid var(--line);
+    display:flex;align-items:center;justify-content:center;margin-bottom:10px;
+  }
+  .motif svg{width:26px;height:26px;}
+  .story-meta{font-size:14px;color:var(--ink-soft);}
+  .story-meta .tag{
+    display:inline-block;margin-top:8px;font-size:12.5px;
+    color:var(--gold);border:1px solid var(--rani);
+    padding:3px 9px;border-radius:2px;
+  }
+  .story h3{font-size:22px;margin-bottom:10px;}
+  .story p{color:var(--ink-soft);font-size:16px;max-width:64ch;}
+  .story .byline{margin-top:12px;font-size:14px;font-style:italic;color:var(--ink-soft);}
+
+  .story-note{
+    margin-top:44px;padding:24px;background:var(--white);
+    border:1px solid var(--line);font-size:15px;color:var(--ink-soft);
+  }
+  .story-note strong{color:var(--ink);}
+
+  .encourage-line{
+    margin-top:14px;padding:14px 16px;
+    background:var(--sand-deep);border-left:3px solid var(--rani);
+    font-size:14.5px;color:var(--ink-soft);font-style:italic;
+  }
+  .encourage-line strong{color:var(--ink);font-style:normal;}
+
+  /* ENCOURAGEMENT WALL */
+  .notes-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;margin-top:8px;
+  }
+  .note-card{
+    background:var(--white);border:1px solid var(--line);
+    padding:20px;font-size:15px;color:var(--ink-soft);position:relative;
+  }
+  .note-card::before{
+    content:"";position:absolute;top:0;left:20px;width:36px;height:4px;
+    background:var(--gold);
+  }
+  .note-card .who{margin-top:14px;font-size:13px;color:var(--green-deep);font-weight:600;}
+  .encouragement-cta{
+    margin-top:36px;padding:22px;background:var(--sand-deep);
+    border:1px dashed var(--line);text-align:center;font-size:15px;color:var(--ink-soft);
+  }
+
+  /* QUOTES SECTION */
+  .quotes-wrap{background:var(--green-deep);color:var(--white);}
+  .quote-block{
+    padding:38px 0;border-top:1px solid rgba(255,255,255,0.14);
+    display:grid;grid-template-columns:1fr;
+  }
+  .quote-block:first-of-type{border-top:none;padding-top:6px;}
+  .quote-mark{
+    font-family:'Fraunces',serif;font-size:56px;line-height:0.5;
+    color:var(--gold);margin-bottom:14px;display:block;
+  }
+  .quote-text{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+    font-size:clamp(20px,3.2vw,28px);line-height:1.35;max-width:26ch;color:var(--white);
+  }
+  .quote-attr{margin-top:16px;font-family:'Public Sans',sans-serif;font-style:normal;
+    font-size:14px;color:#cfe0d2;letter-spacing:0.02em;}
+  .quote-attr strong{color:var(--white);font-weight:600;}
+  .quote-block:nth-child(even){text-align:right;}
+  .quote-block:nth-child(even) .quote-text{margin-left:auto;}
+
+  /* RESOURCES */
+  .res-group{margin-bottom:44px;}
+  .res-group:last-child{margin-bottom:0;}
+  .res-group h3{
+    font-size:15px;text-transform:none;color:var(--green-deep);
+    border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:18px;
+    letter-spacing:0.02em;
+  }
+  .res-item{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 20px;
+    padding:14px 0;border-bottom:1px dashed var(--line);
+  }
+  .res-item:last-child{border-bottom:none;}
+  .res-name{font-weight:600;font-size:15.5px;}
+  .res-desc{color:var(--ink-soft);font-size:14.5px;max-width:46ch;}
+  .res-contact{font-size:14.5px;color:var(--gold);white-space:nowrap;text-align:right;}
+
+  /* SHARE CTA */
+  .share{
+    background:var(--ink);color:var(--white);
+    padding:70px 0;
+  }
+  .share h2{color:var(--white);font-size:clamp(26px,4vw,36px);max-width:16ch;}
+  .share p{color:#cfcac0;margin-top:16px;max-width:56ch;font-size:16px;}
+  .share .btn-solid{background:var(--gold);border-color:var(--gold);margin-top:26px;}
+  .share .btn-solid:hover{background:var(--rani);border-color:var(--rani);}
+
+  /* FORMS */
+  .form-row{margin-bottom:14px;}
+  .encourage-form input[type="text"],
+  .encourage-form textarea,
+  .story-form input[type="text"],
+  .story-form input[type="email"],
+  .story-form textarea{
+    width:100%;padding:12px 14px;font-family:'Public Sans',sans-serif;font-size:15px;
+    border:1px solid var(--line);background:var(--white);color:var(--ink);
+    border-radius:2px;box-sizing:border-box;
+  }
+  .encourage-form textarea,
+  .story-form textarea{resize:vertical;}
+  .encourage-form input:focus,
+  .encourage-form textarea:focus{outline:none;border-color:var(--gold);}
+  .story-form input[type="text"],
+  .story-form input[type="email"],
+  .story-form textarea{
+    background:rgba(255,253,248,0.06);border-color:rgba(255,255,255,0.25);color:var(--white);
+  }
+  .story-form input::placeholder,
+  .story-form textarea::placeholder{color:#a9a49a;}
+  .story-form input[type="text"]:focus,
+  .story-form input[type="email"]:focus,
+  .story-form textarea:focus{outline:none;border-color:var(--gold);}
+
+  footer{
+    padding:40px 24px;text-align:center;font-size:13.5px;color:var(--ink-soft);
+  }
+
+  @media (max-width:640px){
+    .story{grid-template-columns:1fr;}
+    .story-meta{display:flex;gap:12px;align-items:center;}
+  }
+</style>
 </head>
 <body>
 
@@ -174,11 +304,330 @@
       </div>
     </div>
     <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg" role="presentation">
-        <!-- decorative SVG -->
+      <svg viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="160" cy="120" r="70" fill="none" stroke="#c98a2c" stroke-width="2" opacity="0.5"/>
+        <path d="M40 300 Q40 210 90 190 Q95 150 140 145 Q150 100 200 100 Q245 100 255 150 Q290 160 292 210 L292 300 Z" fill="#0b4228"/>
+        <rect x="30" y="296" width="270" height="10" fill="#062f1c"/>
+        <path d="M186 145 a14 14 0 1 1 0.1 0" fill="none" stroke="#f7f1e3" stroke-width="2"/>
+        <rect x="196" y="60" width="8" height="45" fill="#0b4228"/>
+        <circle cx="200" cy="55" r="7" fill="#c98a2c"/>
+        <path d="M120 300 L120 220 Q140 205 160 220 L160 300 Z" fill="#f7f1e3" opacity="0.9"/>
+        <circle cx="140" cy="205" r="16" fill="#a53860"/>
+        <path d="M124 218 Q140 195 156 218" fill="none" stroke="#062f1c" stroke-width="2"/>
+        <g stroke="#f7f1e3" stroke-width="2" fill="none" opacity="0.8">
+          <path d="M60 90 q10 -12 20 0"/>
+          <path d="M85 78 q10 -12 20 0"/>
+        </g>
+        <circle cx="250" cy="70" r="22" fill="#c98a2c" opacity="0.85"/>
       </svg>
     </div>
   </div>
 </header>
 
-<div no
+<div class="truck-border"></div>
+
+<div class="crisis">
+  <div class="wrap">
+    <span><strong>In immediate danger?</strong> Call Police 15.</span>
+    <span><strong>Domestic violence (24/7):</strong> Call 1121, or the toll-free national helpline 1099.</span>
+    <span><strong>Punjab Women's Helpline:</strong> 1043.</span>
+  </div>
+</div>
+
+<section id="stories">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0b4228" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M15 4v5h5"/><path d="M8 12h8 M8 16h5"/></svg></div>
+      <h2>Five women, five kinds of alone</h2>
+      <p>These are composite accounts, written to reflect struggles many women live through quietly. No names are used. If you'd like your own story featured, real or anonymous, see the bottom of this page.</p>
+    </div>
+
+    <div class="story">
+      <div class="story-meta">
+        <div class="motif"><svg viewBox="0 0 24 24" fill="none" stroke="#0b4228" stroke-width="1.6" stroke-linecap="round"><path d="M12 3 L12 14 M12 3 C9 3 7 5 7 8 L17 8 C17 5 15 3 12 3 M6 21 L18 21 M9 21 L7 14 M15 21 L17 14"/></svg></div>
+        Domestic labor
+      </div>
+      <div>
+        <h3>She cleans other people's houses. No one is cleaning up after hers.</h3>
+        <p>She's in her thirties, works as a housemaid, and is raising two children mostly on her own — her husband brings in little and less each year. Her days are entirely accounted for: someone else's home in the morning, her own children at night, and nothing left over for herself. There's no one asking whether the arrangement is fair to her, whether the money adds up, or what happens if she gets sick for a week. She isn't looking for pity. She's looking for someone to help her get what she and her children are actually owed — support from her husband, and a way to stand on her own if he won't provide it.</p>
+        <p class="byline">— a composite account, shared to represent a common struggle</p>
+        <div class="encourage-line"><strong>What she deserves to hear:</strong> that showing up every single day for two children, on wages that don't reflect the work, is not invisible. It's the reason her household runs at all.</div>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="story-meta">
+        <div class="motif"><svg viewBox="0 0 24 24" fill="none" stroke="#a53860" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.3-9C1.2 8.6 3 5.5 6.2 5.2c2-.2 3.4 1 4.3 2.3.6-1 2.2-2.5 4.3-2.3 3.2.3 5 3.4 3.5 6.8C19 16.4 12 21 12 21z"/></svg></div>
+        Immigration & family
+      </div>
+      <div>
+        <h3>A nurse, a mother, and a marriage that couldn't survive a visa</h3>
+        <p>She's a nurse with a young child. Her husband left — not over love, but over a visa he couldn't get and a living he felt he had to chase elsewhere. She's now raising their child while working shifts most people wouldn't choose, in a country that isn't fully hers to stay in either. Her struggle isn't dramatic; it's administrative, exhausting, and lonely. It's paperwork and waiting rooms and a child who needs stability she's not sure she can promise. She needs someone who understands both immigration systems and single-parent survival — because right now she's navigating both alone.</p>
+        <p class="byline">— a composite account, shared to represent a common struggle</p>
+        <div class="encourage-line"><strong>What she deserves to hear:</strong> that she's held a household, a career, and a child's sense of stability together with no partner splitting the load — and that takes a kind of strength that doesn't get a certificate.</div>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="story-meta">
+        <div class="motif"><svg viewBox="0 0 24 24" fill="none" stroke="#c98a2c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.8 2-2.5 4-2.5 6a2.5 2.5 0 0 0 5 0c0-2-.7-4-2.5-6z M6 14c1.5-1 3.5-1.5 6-1.5s4.5.5 6 1.5c0 3.5-2.7 6-6 6.5C8.7 20 6 17.5 6 14z"/></svg></div>
+        Widowhood & inheritance
+      </div>
+      <div>
+        <h3>She raised her children before she'd finished growing up herself. Then she was widowed.</h3>
+        <p>She was married young, before she'd had much say in the matter, and spent her twenties raising children rather than building anything of her own — no career, no savings in her name, no independent footing. Then her husband died, and the life she'd built around him didn't come with a safety net for her. What she was left with wasn't security; it was the same responsibilities, minus the person who used to share them, and often minus any legal or financial claim to what they'd built together. Her question isn't rhetorical: after everything she gave, what does she actually have a right to now?</p>
+        <p class="byline">— a composite account, shared to represent a common struggle</p>
+        <div class="encourage-line"><strong>What she deserves to hear:</strong> that she raised her children well before she'd finished raising herself, and that her worth was never supposed to depend on someone else being alive to vouch for it.</div>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="story-meta">
+        <div class="motif"><svg viewBox="0 0 24 24" fill="none" stroke="#0b4228" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 0 2 .8 2 2s-1 2-2 2-2-.8-2-2 1-2 2-2z M9 8h6l-1 5-1 8h-1l-.5-6-1 6h-1l-1-8-1-5z"/></svg></div>
+        Widowhood & disability
+      </div>
+      <div>
+        <h3>Her legs are held together with rods. She still shows up for her mother.</h3>
+        <p>She was widowed, and not long after, an injury left her with rods in both legs — walking is slow now, and some days it's simply painful. None of that has stopped her. She still makes her way to her mother's flat, still runs the errands, still does what needs doing, because there's no one else lined up to do it if she doesn't. Nobody is asking what her recovery actually requires, or what happens to her mother's care on the days her legs won't cooperate. She's not asking to be excused from responsibility — she's asking for it to be shared, and for care that accounts for her own body, not just everyone else's needs.</p>
+        <p class="byline">— a composite account, shared to represent a common struggle</p>
+        <div class="encourage-line"><strong>What she deserves to hear:</strong> that walking to her mother's flat on legs held together with rods is not a small thing she should quietly keep doing unnoticed. It's devotion, and someone should say so out loud.</div>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="story-meta">
+        <div class="motif"><svg viewBox="0 0 24 24" fill="none" stroke="#a53860" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h9l3 3v13H6z M15 4v3h3 M9 12h6 M9 15h6 M9 18h4"/></svg></div>
+        Domestic labor & education
+      </div>
+      <div>
+        <h3>She wrote down every hard day. Then she spent it on her children's school fees.</h3>
+        <p>She works as a housemaid, and for years she kept a record — not for anyone else, just for herself — of what the work actually cost her: the wages that never quite stretched, the days she couldn't afford to be sick, the small humiliations most people never see. She didn't write it down to complain. She wrote it down so she wouldn't forget what she was working toward. Every rupee she could spare went toward getting her children into a good school, the kind she never had access to herself. She's still doing the same hard work today. The difference is her children won't have to.</p>
+        <p class="byline">— a composite account, shared to represent a common struggle</p>
+        <div class="encourage-line"><strong>What she deserves to hear:</strong> that turning her own hardship into her children's education, deliberately and on purpose, is one of the most quietly heroic things a person can do — and it should never go unsaid.</div>
+      </div>
+    </div>
+
+    <div class="story-note">
+      <strong>A note on these stories:</strong> the accounts above are composites written to represent struggles many women face, not verified individual testimonies about a specific identifiable person. If this page grows into a space for real, first-person submissions, each one should be reviewed with the contributor's informed consent before publishing — including how identifying details are handled and whether names are used.
+    </div>
+  </div>
+</section>
+
+<section id="encouragement">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#a53860" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-9.7-9.4C1 7.8 3 4.6 6.4 4.3c2.1-.2 3.6 1 4.6 2.4.7-1.1 2.4-2.6 4.6-2.4 3.4.3 5.4 3.5 3.7 6.8C19.5 15.9 12 20.5 12 20.5z"/></svg></div>
+      <h2>Words for her</h2>
+      <p>Appreciation these women rarely hear said out loud. Read what others have left, or add your own.</p>
+    </div>
+
+    <div class="notes-grid">
+      <div class="note-card">
+        "You are not invisible. Someone, somewhere, sees exactly how much you're carrying — and it does not go unnoticed by everyone."
+        <div class="who">— a reader</div>
+      </div>
+      <div class="note-card">
+        "The fact that you keep showing up, even on the days it costs you something, is its own kind of strength. That deserves to be said to your face."
+        <div class="who">— a reader</div>
+      </div>
+      <div class="note-card">
+        "You didn't just survive what happened to you — you kept other people standing too. That's not small. That's everything."
+        <div class="who">— a reader</div>
+      </div>
+      <div class="note-card">
+        "Whoever is reading this and doing more than anyone acknowledges: I see you, and I'm proud of you."
+        <div class="who">— a reader</div>
+      </div>
+    </div>
+
+    <form class="encourage-form" action="https://formspree.io/f/mjybnker" method="POST">
+      <input type="hidden" name="_subject" value="New encouragement note — Heard, But Unheard">
+      <p style="margin:0 0 14px;font-size:15px;color:var(--ink-soft);">Leave your own words of encouragement below — it may be added to this wall.</p>
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your name (optional)">
+      </div>
+      <div class="form-row">
+        <textarea name="message" placeholder="Write a few words of encouragement..." rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid" style="border-color:var(--rani);background:var(--rani);">Send encouragement</button>
+    </form>
+  </div>
+</section>
+
+<section id="quotes" class="quotes-wrap">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:38px;">
+      <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#c98a2c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v16 M16 4v16 M4 8h4 M16 8h4 M4 16h4 M16 16h4"/></svg></div>
+      <h2 style="color:var(--white);">Voices that came before</h2>
+      <p style="color:#cfe0d2;">Women who spoke first, so others could speak after them.</p>
+    </div>
+
+    <div class="quote-block">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">One child, one teacher, one book, one pen can change the world.</div>
+      <div class="quote-attr"><strong>Malala Yousafzai</strong> — Pakistani education activist, youngest-ever Nobel Peace Prize laureate</div>
+    </div>
+
+    <div class="quote-block">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">Woman occupies an exceedingly important place in the world.</div>
+      <div class="quote-attr"><strong>Fatima Jinnah</strong> — Madar-e-Millat, dental surgeon and founding figure of Pakistan</div>
+    </div>
+
+    <div class="quote-block">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">Democracy is the best revenge.</div>
+      <div class="quote-attr"><strong>Benazir Bhutto</strong> — first woman elected to lead a Muslim-majority nation</div>
+    </div>
+
+    <div class="quote-block">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">No one can make you feel inferior without your consent.</div>
+      <div class="quote-attr"><strong>Eleanor Roosevelt</strong> — diplomat and human rights advocate</div>
+    </div>
+
+    <div class="quote-block">
+      <span class="quote-mark">"</span>
+      <div class="quote-text">Still I rise.</div>
+      <div class="quote-attr"><strong>Maya Angelou</strong> — poet and civil rights icon</div>
+    </div>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#0b4228" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.4 8 10 4.6-1.6 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h2>Who's in her corner</h2>
+      <p>A working directory of established, free helplines and legal aid organizations operating in Pakistan — for when appreciation isn't enough and real support is needed too. Coverage and hours vary by province.</p>
+    </div>
+
+    <div class="res-group">
+      <h3>Immediate safety & crisis</h3>
+      <div class="res-item">
+        <div><div class="res-name">Police Emergency</div><div class="res-desc">For any immediate danger.</div></div>
+        <div class="res-contact">15</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">National Domestic Violence Helpline</div><div class="res-desc">24/7 helpline under the Domestic Violence (Prevention and Protection) Act, 2026.</div></div>
+        <div class="res-contact">1121</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">Ministry of Human Rights Helpline (1099)</div><div class="res-desc">Free, nationwide helpline and app to report abuse and access legal referrals.</div></div>
+        <div class="res-contact">1099</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">Punjab Women's Helpline</div><div class="res-desc">Province-specific support line for women in Punjab.</div></div>
+        <div class="res-contact">1043</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">Edhi Foundation</div><div class="res-desc">24/7 emergency response, ambulance, and shelters for women across Pakistan.</div></div>
+        <div class="res-contact">115</div>
+      </div>
+    </div>
+
+    <div class="res-group">
+      <h3>Counseling & gender-based violence support</h3>
+      <div class="res-item">
+        <div><div class="res-name">Rozan Helpline</div><div class="res-desc">Free telephone counseling for women and children, Mon–Sat, 10am–6pm.</div></div>
+        <div class="res-contact">0800-22444</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">Bedari Helpline</div><div class="res-desc">Support for gender-based violence, forced/child marriage, and discrimination, Mon–Fri 9am–5pm.</div></div>
+        <div class="res-contact">0300-5251717</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">Dastak Shelter & Crisis Center</div><div class="res-desc">24/7 helpline, free legal aid, and shelter for women survivors of violence.</div></div>
+        <div class="res-contact">dastak.org.pk</div>
+      </div>
+    </div>
+
+    <div class="res-group">
+      <h3>Legal aid — maintenance, khula & domestic labor rights</h3>
+      <div class="res-item">
+        <div><div class="res-name">AGHS Legal Aid Cell</div><div class="res-desc">Free legal representation for women in family law, custody, and maintenance cases.</div></div>
+        <div class="res-contact">aghs.org.pk</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">Legal Aid Society Pakistan</div><div class="res-desc">Connects low-income women, including domestic workers, to pro bono lawyers.</div></div>
+        <div class="res-contact">las.org.pk</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">Aurat Foundation</div><div class="res-desc">Women's rights organization with offices in Islamabad, Lahore, Karachi, Peshawar & Quetta.</div></div>
+        <div class="res-contact">af.org.pk</div>
+      </div>
+    </div>
+
+    <div class="res-group">
+      <h3>Immigration, overseas employment & family separation</h3>
+      <div class="res-item">
+        <div><div class="res-name">Bureau of Emigration & Overseas Employment</div><div class="res-desc">Official information on overseas work visas and protections for workers' families.</div></div>
+        <div class="res-contact">beoe.gov.pk</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">Overseas Pakistanis Foundation</div><div class="res-desc">Support for families affected by a spouse's overseas migration or employment disputes.</div></div>
+        <div class="res-contact">opf.org.pk</div>
+      </div>
+    </div>
+
+    <div class="res-group">
+      <h3>Disability & caregiving support</h3>
+      <div class="res-item">
+        <div><div class="res-name">Special Talent Exchange Program (STEP)</div><div class="res-desc">Disability rights organization offering rehabilitation referrals and advocacy support.</div></div>
+        <div class="res-contact">step.org.pk</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">Milestone Society</div><div class="res-desc">Physiotherapy, mobility aids, and rehabilitation support for people with physical disabilities.</div></div>
+        <div class="res-contact">milestonesociety.org.pk</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">Edhi Foundation</div><div class="res-desc">Free ambulance transport, home nursing referrals, and elder-care support.</div></div>
+        <div class="res-contact">115</div>
+      </div>
+    </div>
+
+    <div class="res-group">
+      <h3>Widowhood, inheritance & maintenance rights</h3>
+      <div class="res-item">
+        <div><div class="res-name">National Commission on the Status of Women</div><div class="res-desc">Guidance on inheritance rights, harassment complaints, and legal referrals.</div></div>
+        <div class="res-contact">ncsw.gov.pk</div>
+      </div>
+      <div class="res-item">
+        <div><div class="res-name">Shirkat Gah Women's Resource Centre</div><div class="res-desc">Advocacy and legal support on inheritance, property, and family law disputes.</div></div>
+        <div class="res-contact">shirkatgah.org</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="share" class="share">
+  <div class="wrap">
+    <h2>Have something to share?</h2>
+    <p>Every story helps someone else feel less alone — and every submission is reviewed with you before anything goes live. You choose how much to share, and whether your name is attached.</p>
+    <form class="story-form" action="https://formspree.io/f/mjybnker" method="POST">
+      <input type="hidden" name="_subject" value="New story submission — Heard, But Unheard">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your name (or 'anonymous')">
+      </div>
+      <div class="form-row">
+        <input type="email" name="email" placeholder="Your email (optional, so we can follow up)">
+      </div>
+      <div class="form-row">
+        <textarea name="story" placeholder="Share your story here..." rows="5" required></textarea>
+      </div>
+      <div class="form-row" style="display:flex;align-items:center;gap:8px;">
+        <input type="checkbox" id="consent" name="consent" value="yes" required style="width:auto;">
+        <label for="consent" style="font-size:13.5px;color:#cfcac0;">I understand this may be reviewed and possibly featured, anonymously unless I say otherwise.</label>
+      </div>
+      <button type="submit" class="btn btn-solid">Submit your story</button>
+    </form>
+  </div>
+</section>
+
+<div class="truck-border"></div>
+<footer>
+  Heard, But Unheard — a space for the stories of Pakistani women and the people who can help. Helpline numbers verified September 2026; coverage and hours vary by province.
+</footer>
+
+</body>
+</html>
